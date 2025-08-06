@@ -2,8 +2,10 @@
 
 const express = require("express")
 const RouterExpress = require("./Router_Express")
+const cookieParser = require("cookie-parser")
 
 const app = express()
+app.use(cookieParser())
 
 //? method get untuk meminta dari server sebuah path
 app.get("/admin", (req, res) => {
@@ -63,6 +65,13 @@ app.route("/book")
 })
 .put((req, res) => {
     res.send("ini permintaan route dari /book dengan method put")
+})
+
+app.get("/login", (req, res) => {
+    console.log({"Cookie" : req.cookies})
+
+    console.log({"Signed Cookie" : req.signedCookies})
+    res.send("ini dari test cookie")
 })
 
 // ini adalah sebuah method untuk mengambil config dari file lain

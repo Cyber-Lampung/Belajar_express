@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "cookie-parse": "^0.4.0",
+    "cookie-parser": "^1.4.7",
     "express": "^5.1.0",
     "nodemon": "^3.1.10"
   },
@@ -7,7 +9,6 @@
   "description": "Dasar_Express",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "jalankan": "nodemon express_dasar/RoutingDasar.js",
     "test": "echo \"Error: no test specified\" && exit 1"

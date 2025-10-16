@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <title>WebStore Anak Indonesia</title>
+  </head>
+
+  <style>
+    body {
+      background: linear-gradient(to right, rgb(0, 0, 0), rgb(37, 37, 168));
+      overflow-x: hidden;
+    }
+    header {
+      backdrop-filter: blur(20px);
+      background-color: rgba(255, 255, 255, 0.2);
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+    .sectionBody {
+      background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.886),
+        rgba(37, 37, 168, 0.76)
+      );
+    }
+  </style>
+
+  <body>
+    <header class="sticky top-0">
+      <div class="flex justify-between items-center p-3">
+        <h1 class="title" hidden>WebStore Anak Indonesia</h1>
+        <!-- <img
+          src="../../image/IconHeader.jpg"
+          alt=""
+          class="rounded-[100px] w-15"
+        /> -->
+
+        <i class="globe bi-globe text-5xl text-orange-400"></i>
+
+        <div>
+          <nav
+            class="absolute left-[-390px] bg-black w-full h-screen top-0"
+            id="listMenu"
+          >
+            <ul
+              class="flex flex-col gap-10 pl-10 font-bold text-white relative top-10"
+            >
+              <div>
+                <i
+                  class="bi bi-x text-white absolute top-[-10px] right-[30px] text-4xl"
+                  id="closeMenu"
+                ></i>
+              </div>
+              <li><a href="">Home</a></li>
+              <li><a href="">About</a></li>
+              <li><a href="">Pelayanan</a></li>
+              <li><a href="">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div>
+          <label for="checkbox">
+            <i class="menu bi-list text-3xl text-white" id="menu"></i>
+          </label>
+          <input type="checkbox" id="checkbox" hidden />
+        </div>
+      </div>
+    </header>
+    <main class="sectionBody bg-black h-screen">
+      <section class="pt-10">
+        <div>
+          <div class="flex justify-center pt-5">
+            <img class="w-70" src="../../image/iconServer.png" alt="" />
+          </div>
+          <div class="pt-20">
+            <h2
+              class="text-lg p-3 font-bold text-sans text-white"
+              style="font-family: sans-serif"
+            >
+              Server Cepat, Stabil, dan Terjangkau untuk Semua Kebutuhan Anda
+            </h2>
+            <p class="pl-3 w-80 text-stone-300 text-sm">
+              Optimalkan website, aplikasi, dan bisnis Anda dengan server
+              handal, uptime 99,9%, dan support teknis 24/7.
+            </p>
+          </div>
+          <div class="pl-3 pt-10">
+            <button
+              class="border-2 border-white p-2 text-white w-40 rounded-xl font-bold"
+            >
+              <a href="../../src/Auth/Sign/Register.html">Register Now</a>
+            </button>
+          </div>
+        </div>
+
+        <!-- section for kenapa milih kami -->
+
+        <div class="p-3">
+          <div class="pt-30">
+            <h3
+              class="text-white font-bold text-xl"
+              style="font-family: sans-serif"
+            >
+              Kenapa Memilih Kami ?
+            </h3>
+          </div>
+          <div class="overflow-x-auto flex-nowrap pt-5">
+            <div class="p-4 flex gap-5 w-[1300px]">
+              <div
+                class="w-60 h-30 bg-black p-3 rounded-2xl shadow-md shadow-stone-300"
+              >
+                <div class="flex items-center gap-3">
+                  <i class="roket bi-rocket-takeoff-fill text-orange-400"></i>
+                  <p class="font-bold text-md text-white">Super Cepat</p>
+                </div>
+                <p class="text-white text-xs p-3">
+                  Infrastruktur premium dengan koneksi berkecepatan tinggi.
+                </p>
+              </div>
+              <div
+                class="w-60 h-30 bg-black p-3 rounded-2xl shadow-md shadow-stone-300"
+              >
+                <div class="flex items-center gap-3">
+                  <i class="shield bi-shield-fill text-white"></i>
+                  <p class="font-bold text-md text-white">Aman & Terpercaya</p>
+                </div>
+                <p class="text-white text-xs p-3">
+                  Perlindungan DDoS dan keamanan data terbaik.
+                </p>
+              </div>
+              <div
+                class="w-60 h-30 bg-black p-3 rounded-2xl shadow-md shadow-stone-300"
+              >
+                <div class="flex items-center gap-3">
+                  <i class="graph bi-graph-up text-white"></i>
+                  <p class="font-bold text-md text-white">Stabil & Handal</p>
+                </div>
+                <p class="text-white text-xs p-3">
+                  Uptime 99,9% untuk menjaga bisnis Anda tetap online.
+                </p>
+              </div>
+              <div
+                class="w-60 h-30 bg-black p-3 rounded-2xl shadow-md shadow-stone-300"
+              >
+                <div class="flex items-center gap-3">
+                  <i class="phone bi-phone-fill text-white"></i>
+                  <p class="font-bold text-md text-white">Support 24/7</p>
+                </div>
+                <p class="text-white text-xs p-3">
+                  Tim profesional selalu siap membantu kapan pun.
+                </p>
+              </div>
+              <div
+                class="w-60 h-30 bg-black p-3 rounded-2xl shadow-md shadow-stone-300"
+              >
+                <div class="flex items-center gap-3">
+                  <i class="cash bi-cash text-white"></i>
+                  <p class="font-bold text-md text-white">Harga Bersahabat</p>
+                </div>
+                <p class="text-white text-xs p-3">
+                  Mulai dari harga hemat tanpa biaya tersembunyi.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- paket harga server -->
+        <div class="pt-20 pb-30">
+          <div class="flex justify-center">
+            <h3 class="font-bold text-white text-xl">Paket harga server</h3>
+          </div>
+          <div class="pt-10 flex text-white gap-10 overflow-x-auto pl-10">
+            <div class="w-70 h-auto border-white border-2 p-3 rounded-2xl">
+              <p class="text-center font-bold text-xl text-white">
+                Starter VPS
+              </p>
+              <div class="p-4">
+                <p>Rp. 50.000 / perbulan</p>
+                <ul class="pt-5 text-sm">
+                  <li>RAM: 1 GB</li>
+                  <li>SSD: 20 GB</li>
+                  <li>Bandwidth: 1 TB</li>
+                  <li>CPU: 1 Core</li>
+                  <li>Backup: Mingguan</li>
+                  <li>Support: Standard</li>
+                </ul>
+                <div class="pt-10 flex justify-center">
+                  <button class="border-2 border-white p-2 w-50 rounded-2xl">
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="w-70 h-auto border-white border-2 p-3 rounded-2xl">
+              <p class="text-center font-bold text-xl text-white">
+                Business VPS
+              </p>
+              <div class="p-4">
+                <p>Rp 150.000/bulan</p>
+                <ul class="pt-5 text-sm">
+                  <li>RAM: 4 GB</li>
+                  <li>SSD: 60 GB</li>
+                  <li>Bandwidth: 3 TB</li>
+                  <li>CPU: 2 Core</li>
+                  <li>Backup: 3x/minggu</li>
+                  <li>Support: 24/7 Chat & Ticket</li>
+                </ul>
+                <div class="pt-10 flex justify-center">
+                  <button class="border-2 border-white p-2 w-50 rounded-2xl">
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="w-70 h-auto border-white border-2 p-3 rounded-2xl">
+              <p class="text-center font-bold text-xl text-white">
+                Starter VPS
+              </p>
+              <div class="p-4">
+                <p>Rp. 50.000 / perbulan</p>
+                <ul class="pt-5 text-sm">
+                  <li>RAM: 1 GB</li>
+                  <li>SSD: 20 GB</li>
+                  <li>Bandwidth: 1 TB</li>
+                  <li>CPU: 1 Core</li>
+                  <li>Backup: Harian (opsional)</li>
+                  <li>Support: Premium + Managed</li>
+                </ul>
+                <div class="pt-10 flex justify-center">
+                  <button class="border-2 border-white p-2 w-50 rounded-2xl">
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+
+        <div class="p-3">
+          <h1 class="text-3xl font-bold text-white text-md">
+            Siap Memulai Perjalanan Anda ?
+          </h1>
+          <p class="text-sm text-white pt-5">
+            Daftarkan akun Anda sekarang dan nikmati server cepat, aman, serta
+            support 24/7. Pendaftaran mudah dan hanya butuh beberapa detik.
+          </p>
+
+          <div class="pt-10 flex justify-center">
+            <button
+              class="border-2 border-white font-bold p-2.5 text-white rounded-2xl w-[250px] text-sm"
+            >
+              Register & Mulai Gratis
+            </button>
+          </div>
+        </div>
+
+        <!-- Testimony -->
+
+        <div class="pb-20">
+          <div class="flex justify-center pt-20">
+            <h1 class="font-bold text-2xl text-white">Testimony kami</h1>
+          </div>
+          <div class="overflow-x-auto">
+            <div class="flex text-white gap-10 w-[900px] pl-10 mt-10">
+              <div class="border-2 border-white w-70 h-70 p-5 rounded-2xl">
+                <div>
+                  <figure class="flex items-center gap-5 justify-center">
+                    <img
+                      src=""
+                      alt=""
+                      class="w-15 h-15 rounded-[150px] bg-white"
+                    />
+                    <figcaption class="font-bold mt-2 text-white text-xs">
+                      andi, company profile
+                    </figcaption>
+                  </figure>
+                </div>
+                <div>
+                  <p class="text-center pt-10 text-white text-sm">
+                    server disini sangat bagus untuk menjalankan webiste company
+                    saya.
+                  </p>
+                </div>
+              </div>
+              <div class="border-2 border-white w-70 h-70 p-5 rounded-2xl">
+                <div>
+                  <figure class="flex items-center gap-5 justify-center">
+                    <img
+                      src=""
+                      alt=""
+                      class="w-15 h-15 rounded-[150px] bg-white"
+                    />
+                    <figcaption class="font-bold mt-2 text-white text-sm">
+                      Mr. John
+                    </figcaption>
+                  </figure>
+                </div>
+                <div>
+                  <p class="text-center pt-10 text-white text-sm">
+                    beli server disini sangat mudah dan sangat efisiens sekali .
+                  </p>
+                </div>
+              </div>
+              <div class="border-2 border-white w-70 h-70 p-5 rounded-2xl">
+                <div>
+                  <figure class="flex items-center gap-5 justify-center">
+                    <img
+                      src=""
+                      alt=""
+                      class="w-15 h-15 rounded-[150px] bg-white"
+                    />
+                    <figcaption class="font-bold mt-2 text-white text-xs">
+                      Andi, Pemilik Toko Online
+                    </figcaption>
+                  </figure>
+                </div>
+                <div>
+                  <p class="text-center pt-10 text-white text-sm">
+                    Sejak pindah ke server ini, website toko online saya jadi
+                    lebih cepat dan stabil. Supportnya juga ramah dan responsif!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- footer website -->
+
+      <footer class="p-5 bg-black h-auto">
+        <div class="flex justify-between items-center">
+          <h2 class="text-xl font-bold text-white">WebStore Anak Indonesia</h2>
+          <img class="w-20" src="../../image/iconServer.png" alt="" />
+        </div>
+
+        <div class="text-white">
+          <nav class="grid grid-cols-2 gap-3 p-4">
+            <div>
+              <div>
+                <div>
+                  <h5 class="font-bold text-md">service kami</h5>
+                </div>
+                <ul class="text-xs p-4 flex flex-col gap-3">
+                  <li>
+                    <a href="about">vps starter</a>
+                  </li>
+                  <li>
+                    <a href="about">vps bisnis</a>
+                  </li>
+                  <li>
+                    <a href="about">pro vps</a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div>
+                  <h5 class="font-bold text-md">Tentang Kami</h5>
+                </div>
+                <ul class="text-xs p-4">
+                  <li>
+                    <a href="about">About WebStore</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div>
+                <h5 class="font-bold text-md">Alamat kami</h5>
+              </div>
+              <div>
+                <p class="text-xs">
+                  Lampung, lampung Selatan , Bandar Lampung, Natar
+                </p>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </footer>
+    </main>
+
+    <script src="../../javascript/menu.js"></script>
+  </body>
+</html>

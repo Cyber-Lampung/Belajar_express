@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- link external -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <title>Login your Account</title>
+  </head>
+  <body class="font-sans">
+    <div class="flex flex-col justify-center h-screen pl-5">
+      <div>
+        <h1 class="font-bold text-4xl">Login your Vps</h1>
+      </div>
+      <form id="formLogin" class="mt-15">
+        <div class="flex flex-col gap-7">
+          <div class="flex flex-col gap-3">
+            <input
+              type="email"
+              placeholder="masukan email kamu"
+              required
+              id="email"
+              class="border-2 border-black outline-none p-2.5 text-md w-90 rounded-2xl font-semibold text-stone-600"
+            />
+          </div>
+          <div class="flex flex-col gap-3">
+            <input
+              type="password"
+              placeholder="masukan password kamu"
+              required
+              id="password"
+              class="border-2 border-black outline-none p-2.5 text-md w-80 rounded-2xl font-semibold text-stone-600"
+            />
+            <div class="relative top-[-50px]">
+              <label for="checkbox">
+                <i id="eye" class="eye bi-eye absolute right-16 text-xl"></i>
+                <i
+                  id="eyeSlash"
+                  class="eye bi-eye-slash absolute right-16 text-xl hidden"
+                ></i>
+              </label>
+              <input type="checkbox" id="checkbox" hidden />
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-5">
+          <button
+            type="submit"
+            class="border-none p-2 w-50 rounded-2xl font-bold text-white"
+            style="background: linear-gradient(to left, blue, red)"
+          >
+            masuk sekarang
+          </button>
+        </div>
+        <div class="mt-5">
+          <p class="font-bold text-sm">
+            lupa password ? <a href="" class="text-blue-700">Reset</a>
+          </p>
+        </div>
+      </form>
+    </div>
+
+    <script src="../../../javascript/validation/login.js"></script>
+    <script src="../../../javascript/typePassword.js"></script>
+  </body>
+</html>

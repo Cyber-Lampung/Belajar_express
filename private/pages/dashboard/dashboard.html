@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="http://localhost:3000/css/animation.css" />
+    <link rel="icon" href="http://localhost:3000/image/data-storage.png" />
+    <title>Dashboard Vps</title>
+  </head>
+  <body class="overflow-x-hidden">
+    <header>
+      <aside class="p-4">
+        <nav class="flex items-center justify-between">
+          <i class="globe bi-globe text-orange-600 text-4xl"></i>
+          <div>
+            <label for="menu">
+              <i class="menu bi-list text-2xl"></i>
+            </label>
+            <input type="checkbox" id="menu" hidden />
+          </div>
+        </nav>
+      </aside>
+      <!-- aside for visibility menu -->
+      <aside class="right-[-300px] absolute top-0">
+        <div class="bg-black w-70 h-screen">
+          <div>
+            <i class="close bi-x text-white text-4xl relative top-4 left-5"></i>
+          </div>
+          <nav class="flex justify-center w-full h-screen pt-30">
+            <ul>
+              <li class="text-white font-bold">
+                <div
+                  class="flex gap-2 border-2 border-white p-2 w-40 justify-center rounded-2xl"
+                >
+                  <a href="">Logout</a>
+                  <i class="logout bi-box-arrow-right text-white"></i>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+      <!-- end aside for visibility menu -->
+      <aside
+        class="mt-5 bg-stone-200 w-18 pb-5 absolute left-[-75px]"
+        id="NavbarAsideIcon"
+      >
+        <div>
+          <label for="arrowClose">
+            <i
+              class="arrow bi-chevron-right text-3xl pl-20 bg-stone-200 rounded-2xl"
+              id="iconCloseOpen"
+            ></i>
+          </label>
+          <input type="checkbox" id="arrowClose" hidden />
+        </div>
+        <nav class="flex flex-col p-4 pl-5 gap-10">
+          <i class="house bi-house-fill text-3xl"></i>
+          <i class="house bi-cpu-fill text-3xl"></i>
+          <i class="house bi-cash text-3xl"></i>
+          <i class="house bi-gear-fill text-3xl"></i>
+        </nav>
+      </aside>
+    </header>
+    <main>
+      <section>
+        <div class="boxHalamamUtama mt-20">
+          <div class="flex justify-center">
+            <div class="grid grid-cols-2 gap-5">
+              <div
+                class="w-25 h-25 rounded-2xl bg-stone-100 shadow-xl flex justify-center items-center"
+              >
+                <img
+                  src="http://localhost:3000/image/plus.png"
+                  alt=""
+                  class="w-7"
+                />
+              </div>
+              <div
+                class="w-25 h-25 rounded-2xl bg-stone-100 shadow-xl flex justify-center items-center"
+              >
+                <img
+                  src="http://localhost:3000/image/data-storage.png"
+                  alt=""
+                  class="w-9"
+                />
+              </div>
+              <div
+                class="w-25 h-25 rounded-2xl bg-stone-100 shadow-xl flex justify-center items-center"
+              >
+                <img
+                  src="http://localhost:3000/image/bill.png"
+                  alt=""
+                  class="w-9"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr class="w-80 m-auto mt-10" />
+
+      <!-- main menu home -->
+
+      <article>
+        <div class="p-5">
+          <h4 class="text-2xl font-bold text-sans">Log vps</h4>
+          <div class="float-right mt-5">
+            <input
+              type="search"
+              class="border-3 p-1 w-50 text-sm font-bold rounded-sm outline-none"
+              placeholder="search log"
+            />
+          </div>
+
+          <!-- halaman log aside -->
+        </div>
+        <div class="mt-20">
+          <div
+            class="w-90 m-auto border-2 border-stone-300 shadow-xl p-5 rounded-2xl"
+          ></div>
+        </div>
+      </article>
+    </main>
+    <script src="http://localhost:3000/javascript/openNav.js"></script>
+  </body>
+</html>

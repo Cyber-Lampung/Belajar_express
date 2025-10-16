@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Vps</title>
+    <!-- link external -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <!-- title -->
+  </head>
+  <body>
+    <div class="flex justify-center items-center h-screen">
+      <div class="absolute top-2 flex justify-center">
+        <img
+          src="../../../image/iconRegister.png"
+          alt="iconRegister"
+          class="w-20 relative"
+        />
+      </div>
+      <form id="formRegister">
+        <div>
+          <h1 class="text-3xl font-bold font-sans">Daftar Sekarang</h1>
+        </div>
+
+        <!-- inputan -->
+        <div class="inputan pt-10 flex flex-col gap-5">
+          <div class="email">
+            <p class="email font-bold">Email</p>
+            <input
+              type="email"
+              placeholder="email"
+              class="p-2 border-2 border-black rounded-lg mt-2 outline-none text-sm w-[300px] font-semibold"
+              id="email"
+            />
+          </div>
+          <div class="username">
+            <p class="username font-bold">Username</p>
+            <input
+              type="text"
+              placeholder="username"
+              class="p-2 border-2 border-black rounded-lg mt-2 outline-none text-sm w-[300px] font-semibold"
+              id="username"
+            />
+          </div>
+          <div class="password">
+            <p class="password font-bold">Password</p>
+            <input
+              type="password"
+              placeholder="password"
+              class="p-2 border-2 border-black rounded-lg mt-2 outline-none text-sm w-[300px] font-semibold"
+              id="password"
+            />
+          </div>
+        </div>
+
+        <div class="flex justify-center mt-10">
+          <button
+            class="border-2 border-transparent w-[300px] p-1.5 font-bold font-sans text-white rounded-2xl"
+            style="background: linear-gradient(to left, blue, red)"
+          >
+            Register Now
+          </button>
+        </div>
+
+        <!-- sudah punya akun -->
+
+        <div class="flex gap-2 text-sm font-bold mt-5">
+          <p class="font-sans">Sudah punya akun ?</p>
+          <a href="../Login/Login.html" class="text-blue-700">Login</a>
+        </div>
+      </form>
+    </div>
+
+    <script src="../../../javascript/validation.js"></script>
+  </body>
+</html>

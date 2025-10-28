@@ -3,13 +3,16 @@ const cors = require("cors");
 const { v4: uuidv4 } = require("uuid");
 const db = require("./model/db/database.js");
 const checkuser = require("./service/logic/service_logic_updateUser.js");
-//const logicAksesApi = require("./service/logic/service_logic_AksesApi.js");
+// const logicAksesApi = require("./service/logic/service_logic_AksesApi.js");
+const admin = require("./service/routing/RoutingRoute.js");
+// const helmet = require("helmet");
 
 console.log(checkuser);
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+// app.use(helmet());
 
 app.use(express.static("public"));
 
@@ -24,6 +27,7 @@ app.get("/api/v1/user/Login", (req, res) => {
   });
 });
 
+// user Register
 app.post("/api/v1/user/Register", (req, res) => {
   const { email, username, password } = req.body;
 
@@ -44,6 +48,7 @@ app.post("/api/v1/user/Register", (req, res) => {
   );
 });
 
+// edit user profile
 app.patch("/api/v1/user/patch/:username", (req, res, next) => {
   const user = req.params.username;
 
@@ -83,6 +88,7 @@ app.patch("/api/v1/user/patch/:username", (req, res, next) => {
   });
 });
 
+// delete user profile
 app.delete("/api/v1/user/delete/:username", (req, res) => {
   const username = req.params.username;
   console.log(username);
@@ -94,6 +100,22 @@ app.delete("/api/v1/user/delete/:username", (req, res) => {
       res.status(204).json({ message: "user berhasil dihapus", status: 204 });
     } else {
       res.status(404).json({ message: "not found user", status: 404 });
+    }
+  });
+});
+
+app.post("/admin", (req, res) => {
+  const { email, password } = req.body;
+
+  db.query("select * from user", (err, result) => {
+    if (err) throw err;
+
+    const findUser = result.find((u) => u.email === email);
+
+    if (findUser) {
+      console.log("berhasil login admin");
+    } else {
+      console.log("gagal login admin");
     }
   });
 });

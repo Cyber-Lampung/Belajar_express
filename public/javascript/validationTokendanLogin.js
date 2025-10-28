@@ -1,21 +1,18 @@
-const validationLogin = (e) => {
-  const form = document.getElementById("formAksesApi");
+const form = document.getElementById("formAksesApi");
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-    const emailUser = document.getElementById("emailuser").value;
-    const password = document.getElementById("password").value;
+  const email = document.getElementById("emailuser").value;
+  const password = document.getElementById("password").value;
 
-    const req = fetch("http://localhost:3000/api/v1/user/Login", {
+  try {
+    fetch("http://localhost:3000/admin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(emailUser, password),
+      body: JSON.stringify({ email: email, password: password }),
     });
-
-    console.log((req) => req.json());
-    console.log(req);
-  });
-};
-
-validationLogin();
+  } catch {
+    console.log("tidak berhasil post data");
+  }
+});

@@ -21,3 +21,7 @@ http://localhost:3000/api/test/admin
 # test api user
 
 http://localhost:3000/api/test/user
+
+# api delete user
+
+[link](http://localhost:3000/api/v1/user/delete/:username)

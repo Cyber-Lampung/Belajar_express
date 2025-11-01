@@ -1,11 +1,18 @@
 const express = require("express");
 const cors = require("cors");
-const { v4: uuidv4 } = require("uuid");
+const { v4: uuidv4, validate } = require("uuid");
 const db = require("./model/db/database.js");
+const jwt = require("jsonwebtoken");
+const brycpt = require("bcrypt");
 const checkuser = require("./service/logic/service_logic_updateUser.js");
 // const logicAksesApi = require("./service/logic/service_logic_AksesApi.js");
 const admin = require("./service/routing/RoutingRoute.js");
+const verifyTokenheader = require("./service/logic/verifyTokenUser.js");
 // const helmet = require("helmet");
+
+// token authentication
+
+const verifyToken = "tokenharusdiverifykasi";
 
 console.log(checkuser);
 
@@ -19,11 +26,65 @@ app.use(express.static("public"));
 // untuk random user id
 const id = uuidv4();
 
-app.get("/api/v1/user/Login", (req, res) => {
+app.get("/api/test/admin", (req, res) => {
+  db.query("select * from admin", (err, result) => {
+    if (err) throw err;
+
+    res.json(result);
+  });
+});
+
+app.get("/api/test/user", (req, res) => {
   db.query("select * from user", (err, result) => {
     if (err) throw err;
 
-    res.send(result);
+    res.json(result);
+  });
+});
+
+app.get("/api/v1/user/Login", async (req, res, next) => {
+  // mengambil data dari request user
+
+  const { email, password } = req.body;
+
+  // payload for jwt
+
+  const payload = {
+    userId: "hayo mau ngapain didecode",
+    passId: "kamu mau nyari apa sih ?",
+  };
+
+  // membuat session untuk Register
+
+  const tokenSession = jwt.sign(payload, verifyToken, {
+    expiresIn: "1h",
+  });
+
+  db.query("select * from user", (err, result) => {
+    if (err) throw err;
+
+    const findUser = result.find(
+      (u) => u.email === email && u.password === password
+    );
+
+    if (findUser) {
+      // res.status(200).send({ message: "user found" });
+      req.headers.authorization = tokenSession;
+    }
+
+    const token = req.headers.authorization;
+
+    const verif = verifyTokenheader(req, res, next, token);
+
+    if (!verif) {
+      res
+        .status(401)
+        .send({ message: "invalid login", validate: false, status: 401 });
+    } else {
+      res
+        .status(200)
+        .send({ message: "berhasil login", validate: true, userId: true });
+    }
   });
 });
 
@@ -56,7 +117,8 @@ app.patch("/api/v1/user/patch/:username", (req, res, next) => {
 
   const fields = [];
   const values = [];
-  console.log(values);
+
+  // console.log(values); => debug
 
   if (email) {
     fields.push("email = ?");
@@ -88,34 +150,58 @@ app.patch("/api/v1/user/patch/:username", (req, res, next) => {
   });
 });
 
-// delete user profile
+// delete user profile => test delet profile
 app.delete("/api/v1/user/delete/:username", (req, res) => {
-  const username = req.params.username;
-  console.log(username);
+  const user = req.params.username;
 
-  db.query("delete from user where username = ?", [username], (err, del) => {
+  db.query("select * from user", (err, del) => {
     if (err) throw err;
 
-    if (del.affectedRows > 0) {
-      res.status(204).json({ message: "user berhasil dihapus", status: 204 });
+    const find = del.find((u) => u.username === user);
+
+    if (find) {
+      db.query("delete from user where username = ?", [user], (err, del) => {
+        if (err) throw err;
+
+        return res.status(200).send({
+          message: "berhasil hapus user",
+          valid: true,
+          id: id,
+        });
+      });
     } else {
-      res.status(404).json({ message: "not found user", status: 404 });
+      return res.status(404).send({
+        message: "user tidak ditemukan",
+        valid: false,
+        statusCode: 404,
+      });
     }
   });
 });
 
+// test api for admin login
+
 app.post("/admin", (req, res) => {
   const { email, password } = req.body;
 
-  db.query("select * from user", (err, result) => {
+  db.query("select * from admin", (err, result) => {
     if (err) throw err;
 
-    const findUser = result.find((u) => u.email === email);
+    const findAdmin = result.find(
+      (admin) => admin.email === email && admin.password == password
+    );
 
-    if (findUser) {
-      console.log("berhasil login admin");
+    if (findAdmin) {
+      res.status(200).send({
+        message: "berhasil login",
+        status: 200,
+        valid: true,
+        session: findAdmin.session,
+      });
     } else {
-      console.log("gagal login admin");
+      return res
+        .status(404)
+        .send({ message: "user tidak ditemukan", status: 404, valid: false });
     }
   });
 });

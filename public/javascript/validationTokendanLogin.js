@@ -11,7 +11,9 @@ form.addEventListener("submit", (e) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: email, password: password }),
-    });
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   } catch {
     console.log("tidak berhasil post data");
   }

@@ -13,3 +13,11 @@ http://localhost:3000/api/v1/user/patch/:username
 # Method Login Admin / Endpoint
 
 http://localhost:3000/admin/api/v1/Login
+
+# test api admin
+
+http://localhost:3000/api/test/admin
+
+# test api user
+
+http://localhost:3000/api/test/user

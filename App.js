@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const { v4: uuidv4, validate } = require("uuid");
+const { v4: uuidv4 } = require("uuid");
 const db = require("./model/db/database.js");
 const jwt = require("jsonwebtoken");
 const brycpt = require("bcrypt");
@@ -13,8 +13,6 @@ const verifyTokenheader = require("./service/logic/verifyTokenUser.js");
 // token authentication
 
 const verifyToken = "tokenharusdiverifykasi";
-
-console.log(checkuser);
 
 const app = express();
 app.use(cors());
@@ -42,7 +40,9 @@ app.get("/api/test/user", (req, res) => {
   });
 });
 
-app.get("/api/v1/user/Login", async (req, res, next) => {
+// api login vps account
+
+app.post("/api/v1/user/Login", (req, res, next) => {
   // mengambil data dari request user
 
   const { email, password } = req.body;
@@ -60,16 +60,29 @@ app.get("/api/v1/user/Login", async (req, res, next) => {
     expiresIn: "1h",
   });
 
-  db.query("select * from user", (err, result) => {
+  db.query("select * from user", async (err, result) => {
     if (err) throw err;
 
-    const findUser = result.find(
-      (u) => u.email === email && u.password === password
-    );
+    // medapatkan user kedalam database
+    const findUser = result.find((u) => u.email === email);
 
+    // validation user find / search user
     if (findUser) {
-      // res.status(200).send({ message: "user found" });
-      req.headers.authorization = tokenSession;
+      const comparePassword = await brycpt.compare(password, findUser.password);
+
+      // validation jika findUser dan compaerPassword sama sama true
+      const validationUser = findUser && comparePassword;
+
+      if (validationUser) {
+        // simpan user session dalam header
+        req.headers.authorization = tokenSession;
+      }
+    } else {
+      return res.status(404).send({
+        message: "user tidak ditemukan",
+        validate: false,
+        status: 404,
+      });
     }
 
     const token = req.headers.authorization;
@@ -89,16 +102,27 @@ app.get("/api/v1/user/Login", async (req, res, next) => {
 });
 
 // user Register
-app.post("/api/v1/user/Register", (req, res) => {
+app.post("/api/v1/user/Register", async (req, res) => {
   const { email, username, password } = req.body;
 
   if (!email || !username || !password) {
     return res.send("tidak boleh kosong");
   }
 
+  const payload = { email: email, username: username };
+  const secretRegisterUser = "RegisterduluCihuy";
+
+  // meng enkripsi password user
+
+  const saltPassword = 10;
+
+  const enkripsiPassword = await brycpt.hash(password, saltPassword);
+
+  const session = jwt.sign(payload, secretRegisterUser, { algorithm: "HS256" });
+
   db.query(
-    "insert into user (id, email, username, password) values(?, ?, ?, ?)",
-    [id, email, username, password],
+    "insert into user (id, email, username, password, session) values(?, ?, ?, ?, ?)",
+    [id, email, username, enkripsiPassword, session],
     (err, save) => {
       if (err) throw err;
 

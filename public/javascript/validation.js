@@ -12,14 +12,12 @@ const validation = () => {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    const id = username.length + 2;
-
     // console.log(email, username, password); => debuging
 
-    const send = await fetch("http://localhost:3000/userNew", {
+    const send = await fetch("http://localhost:3000/api/v1/user/Register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id, email, username, password }),
+      body: JSON.stringify({ email, username, password }),
     });
 
     const res = await send.json();

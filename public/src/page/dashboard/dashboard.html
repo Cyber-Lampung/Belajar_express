@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <title>dashboard</title>
+  </head>
+  <body>
+    <header class="flex justify-between p-5 items-center bg-stone-100">
+      <!-- icon for mobile screen -->
+      <div>
+        <img src="../../../image/processor.png" alt="logo" class="w-10" />
+      </div>
+
+      <div class="menu flex flex-col gap-1 hidden">
+        <div class="w-8 h-[3px] bg-black"></div>
+        <span class="w-7 h-[3px] bg-black"></span>
+        <span class="w-8 h-[3px] bg-black"></span>
+      </div>
+    </header>
+    <div class="navbarMenu w-70 h-screen bg-[#194CCD] left-0 top-0 absolute">
+      <div class="bg-white w-full h-40"></div>
+      <div class="iconX absolute">
+        <i
+          id="eye"
+          class="eye bi-x relative top-[-160px] left-55 text-5xl text-black"
+        ></i>
+      </div>
+    </div>
+  </body>
+</html>

@@ -11,25 +11,97 @@
     <title>dashboard</title>
   </head>
   <body>
-    <header class="flex justify-between p-5 items-center bg-stone-100">
-      <!-- icon for mobile screen -->
+    <div
+      class="animationBox flex flex-col gap-5 justify-center h-screen items-center"
+      hidden
+    >
+      <p class="text-xl font-bold font-serif" id="text">
+        Welcome Back in My Website
+      </p>
       <div>
-        <img src="../../../image/processor.png" alt="logo" class="w-10" />
+        <i class="cpu bi-cpu"></i>
+        <i class="cpu bi-cpu"></i>
+        <i class="cpu bi-cpu"></i>
+        <i class="cpu bi-cpu"></i>
+        <i class="cpu bi-cpu"></i>
       </div>
+    </div>
+    <div class="mainBody">
+      <header class="flex justify-between p-5 items-center bg-stone-100">
+        <!-- icon for mobile screen -->
+        <div>
+          <img src="../../../image/processor.png" alt="logo" class="w-10" />
+        </div>
 
-      <div class="menu flex flex-col gap-1 hidden">
-        <div class="w-8 h-[3px] bg-black"></div>
-        <span class="w-7 h-[3px] bg-black"></span>
-        <span class="w-8 h-[3px] bg-black"></span>
-      </div>
-    </header>
-    <div class="navbarMenu w-70 h-screen bg-[#194CCD] left-0 top-0 absolute">
-      <div class="bg-white w-full h-40"></div>
-      <div class="iconX absolute">
-        <i
-          id="eye"
-          class="eye bi-x relative top-[-160px] left-55 text-5xl text-black"
-        ></i>
+        <div class="menu flex flex-col gap-1">
+          <div class="w-8 h-[3px] bg-black"></div>
+          <span class="w-7 h-[3px] bg-black"></span>
+          <span class="w-8 h-[3px] bg-black"></span>
+        </div>
+      </header>
+      <div class="hidden">
+        <div
+          class="navbarMenu w-75 h-screen bg-[#194CCD] left-0 top-0 absolute"
+        >
+          <div class="bg-white w-full h-40">
+            <div>
+              <div class="headerAtas pt-5 pl-5">
+                <div class="flex gap-2 items-center">
+                  <img
+                    src="../../../image/customer-service.png"
+                    alt="icon customer-service"
+                    class="w-10 border-2 border-black rounded-full"
+                  />
+                  <div>
+                    <p class="text-sm font-bold">Rado Hidayatulloh</p>
+                    <p class="text-stone-400 text-xs">point : { 0 }</p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="box w-27 h-18 top-4 left-16 bg-violet-700 z-40 relative rounded-xl shadow-xl"
+              >
+                <div class="">
+                  <p class="text-white font-bold text-xs pt-2 pl-2">
+                    vps active
+                  </p>
+                  <div>
+                    <p class="text-xs p-2 text-center text-white">{ 0 } vps</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute left-0 z-0">
+            <div
+              class="bg-white w-43 h-20 relative top-[-55px] rounded-es-[550px] rounded-ee-[550px] z-0"
+            ></div>
+            <div
+              class="bg-white w-10 h-5 relative top-[-85px] left-30 rounded-ee-[350px] z-0"
+            ></div>
+            <div
+              class="bg-white w-48 h-25 relative top-[-165px] left-30 rounded-ee-[850px] rounded-es-[850px] z-0"
+            ></div>
+          </div>
+          <div class="iconX absolute">
+            <i
+              id="x"
+              class="x bi-x relative top-[-160px] left-59 text-5xl text-black"
+            ></i>
+          </div>
+          <div class="p-5 pt-20">
+            <aside class="navbarLeft">
+              <div class="text-sans text-white indent-7 flex flex-col gap-9">
+                <a href="#">Home Configuration</a>
+                <a href="#">vps management</a>
+                <a href="#">billing</a>
+                <a href="#">support</a>
+                <a href="#">profile</a>
+                <a href="#">LogOut</a>
+              </div>
+            </aside>
+          </div>
+        </div>
       </div>
     </div>
   </body>

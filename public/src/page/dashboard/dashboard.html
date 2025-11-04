@@ -27,16 +27,18 @@
       </div>
     </div>
     <div class="mainBody">
-      <header class="flex justify-between p-5 items-center bg-stone-100">
+      <header
+        class="flex justify-between p-5 items-center blur-10 sticky top-0 backdrop-blur-2xl"
+      >
         <!-- icon for mobile screen -->
         <div>
           <img src="../../../image/processor.png" alt="logo" class="w-10" />
         </div>
 
         <div class="menu flex flex-col gap-1">
-          <div class="w-8 h-[3px] bg-black"></div>
+          <div class="w-7 h-[3px] bg-black"></div>
+          <span class="w-6 h-[3px] bg-black"></span>
           <span class="w-7 h-[3px] bg-black"></span>
-          <span class="w-8 h-[3px] bg-black"></span>
         </div>
       </header>
       <div class="hidden">
@@ -103,6 +105,101 @@
           </div>
         </div>
       </div>
+      <main>
+        <section class="pt-3">
+          <div
+            class="heroSection w-full h-30 bg-blue-700 rounded-ss-[100px] rounded-ee-[200px]"
+          >
+            <div class="p-4 pl-9 flex justify-between">
+              <div>
+                <p class="text-white font-bold">Hello, { Rado Hidayatulloh }</p>
+                <p class="text-stone-400 font-semibold text-sm">point : {0}</p>
+              </div>
+              <div class="pr-2">
+                <img src="../../../image/bell.png" alt="notif" class="w-6" />
+              </div>
+            </div>
+          </div>
+
+          <!-- tampilan halaman utama vps  -->
+
+          <div class="containerBox mt-9 flex justify-center">
+            <div
+              class="box w-95 h-60 bg-stone-100 rounded-[20px] shadow-xl/60 flex justify-center items-center"
+            >
+              <div class="subBox grid grid-flow-col grid-rows-2 gap-4">
+                <div
+                  class="w-38 h-23 bg-white rounded-xl shadow-cyan-500 border-2"
+                >
+                  <div class="flex gap-2 items-center p-2">
+                    <img
+                      src="../../../image/cpu.png"
+                      alt="logo cpu"
+                      class="w-7"
+                    />
+                    <p class="text-xs font-bold">VPS Aktif</p>
+                  </div>
+                  <p class="text-center">{ 0 }</p>
+                </div>
+                <div
+                  class="w-38 h-23 bg-white rounded-xl shadow-cyan-500 border-2"
+                >
+                  <div class="flex gap-2 items-center p-2">
+                    <img
+                      src="../../../image/cpu.png"
+                      alt="logo cpu"
+                      class="w-7"
+                    />
+                    <p class="text-xs font-bold">Tagihan Pending</p>
+                  </div>
+                  <p class="text-center">{ 0 }</p>
+                </div>
+                <div
+                  class="w-38 h-23 bg-white rounded-xl shadow-cyan-500 border-2"
+                >
+                  <div class="flex gap-2 items-center p-2">
+                    <img
+                      src="../../../image/cpu.png"
+                      alt="logo cpu"
+                      class="w-7"
+                    />
+                    <p class="text-xs font-bold">VPS Expired</p>
+                  </div>
+                  <p class="text-center">{ 0 }</p>
+                </div>
+                <div
+                  class="w-38 h-23 bg-white rounded-xl shadow-cyan-500 border-2"
+                >
+                  <div class="flex gap-2 items-center p-2">
+                    <img
+                      src="../../../image/cpu.png"
+                      alt="logo cpu"
+                      class="w-7"
+                    />
+                    <p class="text-xs font-bold">Tiket Terbuka</p>
+                  </div>
+                  <p class="text-center">{ 0 }</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- end halaman tampilan vps -->
+
+          <!-- tampilan halaman log vps -->
+
+          <div class="p-5 pt-10">
+            <h2 class="font-bold text-2xl">Log Activity</h2>
+            <div class="mt-8">
+              <div class="border-2 w-90 h-70 rounded-xl">
+                <table class="flex items-center justify-between"></table>
+              </div>
+            </div>
+          </div>
+
+          <!-- tampilan halaman log vps -->
+        </section>
+      </main>
     </div>
   </body>
 </html>

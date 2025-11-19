@@ -1,0 +1,23 @@
+body {
+  overflow-x: hidden;
+}
+
+th,
+td {
+  border: 3px solid black;
+  padding: 5px;
+}
+
+.boxKeterangan {
+  width: 80px;
+}
+
+.navbarMenu {
+  transition: all 2s ease;
+}
+
+table {
+  display: flex;
+  overflow-x: auto;
+  border: solid 2xp black;
+}

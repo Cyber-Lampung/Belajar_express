@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="../../../../css/profileCustom.css" />
+    <title>Support Halaman Client</title>
+  </head>
+  <body>
+    <div class="sticky top-0 left-0">
+      <header
+        class="flex p-5 justify-between items-center blur-10 sticky top-0"
+      >
+        <div class="icon">
+          <img src="../../../../image/processor.png" class="w-10" alt="" />
+        </div>
+        <div class="menu">
+          <div class="flex flex-col gap-1">
+            <span class="w-6 h-[3px] bg-black"></span>
+            <span class="w-5 h-[3px] bg-black"></span>
+            <span class="w-6 h-[3px] bg-black"></span>
+          </div>
+        </div>
+      </header>
+
+      <div class="">
+        <aside class="navbarMenu absolute top-0 left-[-300px]">
+          <div class="h-screen w-75 bg-blue-700">
+            <div class="w-full h-40 bg-white">
+              <div class="flex justify-between items-center">
+                <div class="profile pt-5 pl-5">
+                  <div class="imageUser flex items-center gap-3">
+                    <img
+                      src="../../../../image/customer-service.png"
+                      alt="logo user"
+                      class="w-10 border-2 rounded-full"
+                    />
+                    <div class="flex flex-col gap-0">
+                      <p class="text-md font-bold">Rado Hidayatulloh</p>
+                      <p class="text-sm text-stone-400">point : { 0 }</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- code navbar start -->
+                <div class="relative">
+                  <i
+                    class="x bi-x absolute right-[10px] text-4xl top-[-15px]"
+                    id="x"
+                  ></i>
+                </div>
+                <!-- code navbar end -->
+              </div>
+
+              <!-- box info vps aktif start  -->
+              <div class="absolute left-18 top-20 z-40">
+                <div class="bg-violet-700 w-27 h-18 rounded-lg">
+                  <p class="text-sm text-white font-semibold pl-2 pt-1">
+                    vps active
+                  </p>
+                  <p class="pt-2 text-xs font-bold text-center text-white">
+                    { 0 } vps
+                  </p>
+                </div>
+              </div>
+              <!-- box info vps aktif end -->
+
+              <!-- desain awan start  -->
+
+              <div class="absolute">
+                <div
+                  class="absolute top-20 left-2 w-30 h-10 bg-white rounded-ee-[700px] rounded-es-[700px]"
+                ></div>
+                <div
+                  class="absolute left-27 top-18 bg-white w-20 h-10 rounded-ee-[600px]"
+                ></div>
+                <div
+                  class="absolute top-17.5 left-38 bg-white w-37 h-15 rounded-ee-full rounded-es-full rotate-xl"
+                ></div>
+              </div>
+
+              <!-- desain awan end -->
+            </div>
+
+            <!-- navbar aside for left nav -->
+            <div class="pt-20 pl-10">
+              <nav>
+                <ul class="text-white font-semibold flex flex-col gap-10">
+                  <li><a href="#">Home Configuration</a></li>
+                  <li><a href="./vpsManagement.html">vps management</a></li>
+                  <li><a href="./billingPage.html">billing</a></li>
+                  <li><a href="#">support</a></li>
+                  <li><a href="#">profile</a></li>
+                  <li><a href="#">LogOut</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <section class="mt-15">
+      <!-- halaman untuk profile user -->
+      <div class="">
+        <div class="flex justify-center items-center">
+          <img
+            src="../../../../image/customer-service.png"
+            alt="image profile"
+            class="w-25 border-3 rounded-full"
+          />
+        </div>
+        <h1 class="text-center mt-3 text-xl font-semibold">
+          Rado Hidayatulloh
+        </h1>
+      </div>
+
+      <div class="grid-box">
+        <div class="flex justify-center mt-15 gap-5">
+          <div
+            class="box w-40 h-30 rounded-xl bg-violet-100 shadow-xl hover:w-45 hover:h-35"
+          ></div>
+          <div
+            class="box w-40 h-30 rounded-xl bg-green-100 shadow-xl hover:w-45 hover:h-35"
+          ></div>
+        </div>
+      </div>
+
+      <div class="infoUser ml-10 mt-20">
+        <h2 class="text-2xl font-bold">Information User</h2>
+        <div class="mt-7">
+          <div class="changeUsername w-90">
+            <p class="text-xl text-stone-700 font-semibold">username</p>
+            <div class="p-2 flex items-center justify-between">
+              <div class="w-auto">
+                <p class="font-bold text-md bg-stone-300 rounded-xl p-2">
+                  Rado Hidayatulloh
+                </p>
+              </div>
+              <div>
+                <img src="../../../../image/bell.png" alt="" class="w-8" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="../../../../javascript/LogicMenuDashboard.js"></script>
+    <script src="../../../../javascript/support.js"></script>
+  </body>
+</html>

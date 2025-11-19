@@ -1,0 +1,4 @@
+.box:hover {
+  transition: all 1s ease;
+  cursor: pointer;
+}
